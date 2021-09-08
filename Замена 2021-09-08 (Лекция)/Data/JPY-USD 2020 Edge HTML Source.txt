@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+<HTML>
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script>
+<![endif]-->
+
+<HEAD>
+    <meta name="description" content="История курсов валют Иена и Доллар США (JPY/USD) за 2020-й год, разделенная по месяцам, график курса за год и за каждый месяц года, обменный курс на любой день в году. Источник: free currency rates (FCR)">
+    <title>История обменного курса валют Иена (JPY) и Доллар США (USD) за 2020 год. free currency rates (FCR)</title>
+    <link href="/css/materialize.min.css" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--
+    <link href="" rel="icon" type="image/x-icon" />
+    -->
+    <link href="/images/favicon.ico" rel="icon" type="image/png" />
+    <meta name="copyright" content="Copyright mobilesoftjungle.com, MobileSoftJungle Ltd.">
+    <meta name="viewport" content="width=360, initial-scale=1.0"/>
+    <link rel="alternate" hreflang="en" href="https://freecurrencyrates.com/en/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="ru" href="https://freecurrencyrates.com/ru/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="de" href="https://freecurrencyrates.com/de/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="es" href="https://freecurrencyrates.com/es/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="fr" href="https://freecurrencyrates.com/fr/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="it" href="https://freecurrencyrates.com/it/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="pt" href="https://freecurrencyrates.com/pt/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="zh-hans" href="https://freecurrencyrates.com/zh-hans/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="hu" href="https://freecurrencyrates.com/hu/exchange-rate-history/JPY-USD/2020" />
+<link rel="alternate" hreflang="ja" href="https://freecurrencyrates.com/ja/exchange-rate-history/JPY-USD/2020" />
+    <script>
+        if (!window.i18page) window.i18page = {};
+window.i18page['plot']={"plot_title":"[iso_code2] \u0437\u0430 [base] [iso_code1], \u043c\u0430\u043a\u0441. [max], \u043c\u0438\u043d. [min]","plot_value":"[value] [iso_code2] \u043d\u0430 [date_format_r]","date_r":"[date_format_r]","No Data":"\u041d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445 \u0441 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430","show chart":"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a"};
+window.i18page['date']={"date_format":"[d] [month] [Y]","date_format_short":" [d] [mnth] [Y]","date_format_r":"[d] [monthr] [Y]","time_format":"[H]:[i]:[s] [e]","month_genitivus_0":"\u044f\u043d\u0432\u0430\u0440\u044f","month_genitivus_1":"\u0444\u0435\u0432\u0440\u0430\u043b\u044f","month_genitivus_2":"\u043c\u0430\u0440\u0442\u0430","month_genitivus_3":"\u0430\u043f\u0440\u0435\u043b\u044f","month_genitivus_4":"\u043c\u0430\u044f","month_genitivus_5":"\u0438\u044e\u043d\u044f","month_genitivus_6":"\u0438\u044e\u043b\u044f","month_genitivus_7":"\u0430\u0432\u0433\u0443\u0441\u0442\u0430","month_genitivus_8":"\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f","month_genitivus_9":"\u043e\u043a\u0442\u044f\u0431\u0440\u044f","month_genitivus_10":"\u043d\u043e\u044f\u0431\u0440\u044f","month_genitivus_11":"\u0434\u0435\u043a\u0430\u0431\u0440\u044f","month_0":"\u044f\u043d\u0432\u0430\u0440\u044c","month_1":"\u0444\u0435\u0432\u0440\u0430\u043b\u044c","month_2":"\u043c\u0430\u0440\u0442","month_3":"\u0430\u043f\u0440\u0435\u043b\u044c","month_4":"\u043c\u0430\u0439","month_5":"\u0438\u044e\u043d\u044c","month_6":"\u0438\u044e\u043b\u044c","month_7":"\u0430\u0432\u0433\u0443\u0441\u0442","month_8":"\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044c","month_9":"\u043e\u043a\u0442\u044f\u0431\u0440\u044c","month_10":"\u043d\u043e\u044f\u0431\u0440\u044c","month_11":"\u0434\u0435\u043a\u0430\u0431\u0440\u044c","month_short_0":"\u042f\u043d\u0432","month_short_1":"\u0424\u0435\u0432","month_short_2":"\u041c\u0430\u0440","month_short_3":"\u0410\u043f\u0440","month_short_4":"\u041c\u0430\u0439","month_short_5":"\u0418\u044e\u043d","month_short_6":"\u0418\u044e\u043b","month_short_7":"\u0410\u0432\u0433","month_short_8":"\u0421\u0435\u043d","month_short_9":"\u041e\u043a\u0442","month_short_10":"\u041d\u043e\u044f","month_short_11":"\u0414\u0435\u043a"};
+
+        (function(n,t){"use strict";function w(){}function u(n,t){if(n){typeof n=="object"&&(n=[].slice.call(n));for(var i=0,r=n.length;i<r;i++)t.call(n,n[i],i)}}function it(n,i){var r=Object.prototype.toString.call(i).slice(8,-1);return i!==t&&i!==null&&r===n}function s(n){return it("Function",n)}function a(n){return it("Array",n)}function et(n){var i=n.split("/"),t=i[i.length-1],r=t.indexOf("?");return r!==-1?t.substring(0,r):t}function f(n){(n=n||w,n._done)||(n(),n._done=1)}function ot(n,t,r,u){var f=typeof n=="object"?n:{test:n,success:!t?!1:a(t)?t:[t],failure:!r?!1:a(r)?r:[r],callback:u||w},e=!!f.test;return e&&!!f.success?(f.success.push(f.callback),i.load.apply(null,f.success)):e||!f.failure?u():(f.failure.push(f.callback),i.load.apply(null,f.failure)),i}function v(n){var t={},i,r;if(typeof n=="object")for(i in n)!n[i]||(t={name:i,url:n[i]});else t={name:et(n),url:n};return(r=c[t.name],r&&r.url===t.url)?r:(c[t.name]=t,t)}function y(n){n=n||c;for(var t in n)if(n.hasOwnProperty(t)&&n[t].state!==l)return!1;return!0}function st(n){n.state=ft;u(n.onpreload,function(n){n.call()})}function ht(n){n.state===t&&(n.state=nt,n.onpreload=[],rt({url:n.url,type:"cache"},function(){st(n)}))}function ct(){var n=arguments,t=n[n.length-1],r=[].slice.call(n,1),f=r[0];return(s(t)||(t=null),a(n[0]))?(n[0].push(t),i.load.apply(null,n[0]),i):(f?(u(r,function(n){s(n)||!n||ht(v(n))}),b(v(n[0]),s(f)?f:function(){i.load.apply(null,r)})):b(v(n[0])),i)}function lt(){var n=arguments,t=n[n.length-1],r={};return(s(t)||(t=null),a(n[0]))?(n[0].push(t),i.load.apply(null,n[0]),i):(u(n,function(n){n!==t&&(n=v(n),r[n.name]=n)}),u(n,function(n){n!==t&&(n=v(n),b(n,function(){y(r)&&f(t)}))}),i)}function b(n,t){if(t=t||w,n.state===l){t();return}if(n.state===tt){i.ready(n.name,t);return}if(n.state===nt){n.onpreload.push(function(){b(n,t)});return}n.state=tt;rt(n,function(){n.state=l;t();u(h[n.name],function(n){f(n)});o&&y()&&u(h.ALL,function(n){f(n)})})}function at(n){n=n||"";var t=n.split("?")[0].split(".");return t[t.length-1].toLowerCase()}function rt(t,i){function e(t){t=t||n.event;u.onload=u.onreadystatechange=u.onerror=null;i()}function o(f){f=f||n.event;(f.type==="load"||/loaded|complete/.test(u.readyState)&&(!r.documentMode||r.documentMode<9))&&(n.clearTimeout(t.errorTimeout),n.clearTimeout(t.cssTimeout),u.onload=u.onreadystatechange=u.onerror=null,i())}function s(){if(t.state!==l&&t.cssRetries<=20){for(var i=0,f=r.styleSheets.length;i<f;i++)if(r.styleSheets[i].href===u.href){o({type:"load"});return}t.cssRetries++;t.cssTimeout=n.setTimeout(s,250)}}var u,h,f;i=i||w;h=at(t.url);h==="css"?(u=r.createElement("link"),u.type="text/"+(t.type||"css"),u.rel="stylesheet",u.href=t.url,t.cssRetries=0,t.cssTimeout=n.setTimeout(s,500)):(u=r.createElement("script"),u.type="text/"+(t.type||"javascript"),u.src=t.url);u.onload=u.onreadystatechange=o;u.onerror=e;u.async=!1;u.defer=!1;t.errorTimeout=n.setTimeout(function(){e({type:"timeout"})},7e3);f=r.head||r.getElementsByTagName("head")[0];f.insertBefore(u,f.lastChild)}function vt(){for(var t,u=r.getElementsByTagName("script"),n=0,f=u.length;n<f;n++)if(t=u[n].getAttribute("data-headjs-load"),!!t){i.load(t);return}}function yt(n,t){var v,p,e;return n===r?(o?f(t):d.push(t),i):(s(n)&&(t=n,n="ALL"),a(n))?(v={},u(n,function(n){v[n]=c[n];i.ready(n,function(){y(v)&&f(t)})}),i):typeof n!="string"||!s(t)?i:(p=c[n],p&&p.state===l||n==="ALL"&&y()&&o)?(f(t),i):(e=h[n],e?e.push(t):e=h[n]=[t],i)}function e(){if(!r.body){n.clearTimeout(i.readyTimeout);i.readyTimeout=n.setTimeout(e,50);return}o||(o=!0,vt(),u(d,function(n){f(n)}))}function k(){r.addEventListener?(r.removeEventListener("DOMContentLoaded",k,!1),e()):r.readyState==="complete"&&(r.detachEvent("onreadystatechange",k),e())}var r=n.document,d=[],h={},c={},ut="async"in r.createElement("script")||"MozAppearance"in r.documentElement.style||n.opera,o,g=n.head_conf&&n.head_conf.head||"head",i=n[g]=n[g]||function(){i.ready.apply(null,arguments)},nt=1,ft=2,tt=3,l=4,p;if(r.readyState==="complete")e();else if(r.addEventListener)r.addEventListener("DOMContentLoaded",k,!1),n.addEventListener("load",e,!1);else{r.attachEvent("onreadystatechange",k);n.attachEvent("onload",e);p=!1;try{p=!n.frameElement&&r.documentElement}catch(wt){}p&&p.doScroll&&function pt(){if(!o){try{p.doScroll("left")}catch(t){n.clearTimeout(i.readyTimeout);i.readyTimeout=n.setTimeout(pt,50);return}e()}}()}i.load=i.js=ut?lt:ct;i.test=ot;i.ready=yt;i.ready(r,function(){y()&&u(h.ALL,function(n){f(n)});i.feature&&i.feature("domloaded",!0)})})(window);
+        /* jquery/jquery-1.11.3.min.js,jquery/jquery-ui.js, main.js, materialize.js, hash.js,m_picker.js */
+        head.load({mega:'/js/mega.min.js'}, function () {
+            fcr = new Fcr({"prefix":"\/","lang":"ru","path":"\/ru\/"});
+            head.load(["\/js\/flot.min.js"]);
+        });
+
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-104691335-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!--Google AdSense-->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-6640387362477511",
+        enable_page_level_ads: true
+      });
+    </script>
+
+</HEAD>
+
+
+
+<BODY>
+
+
+<style>
+    .column {
+        float: left;
+        width: 130px;
+        margin: 10px;
+    }
+    .month-header {
+        float: left;
+        margin-right: 60px;
+
+    }
+    .show_chart{
+        /*clear: both;*/
+        cursor: pointer;
+        /*width:50px;*/
+        padding: 10px;
+        height: 35px;
+        position: absolute;
+        right: 0px;
+    }
+</style>
+
+
+<header>
+    <div class="topbar">
+                <nav>
+            <div class="nav-wrapper">
+                <div class="container-fluid">
+                    <ul><li>
+                            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+                                <i class="mdi-navigation-menu"></i></a>
+
+                        </li><li>
+                            <a href="#" data-activates="nav-mobile" class="button-collapse1 top-nav full hide-on-med-and-down">
+                                <i class="mdi-navigation-menu"></i></a>
+
+                        </li></ul>
+                </div>
+
+                <ul id="languageswitcher" class="navbar-default1 right" style="position: absolute;right: 0;">
+                    <li id="languageswitcher_head" class="ui-button-text-icons dropdown-button-lang " data-activates='dropdown-lang'>
+                        <ul>
+                            <li class="ui-button-text">
+                                <i  style="float: left; margin-right: 5px;" class="mdi-action-language"></i><span>Русский</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id='dropdown-lang' class='dropdown-content'>
+                    <li><a href="/en/exchange-rate-history/JPY-USD/2020">English</a></li><li class='active selected'><span>Русский</span></li><li><a href="/de/exchange-rate-history/JPY-USD/2020">Deutsch</a></li><li><a href="/es/exchange-rate-history/JPY-USD/2020">Espa&ntilde;ol</a></li><li><a href="/fr/exchange-rate-history/JPY-USD/2020">Fran&ccedil;ais</a></li><li><a href="/it/exchange-rate-history/JPY-USD/2020">Italiano</a></li><li><a href="/pt/exchange-rate-history/JPY-USD/2020">Portugu&ecirc;s</a></li><li><a href="/zh-hans/exchange-rate-history/JPY-USD/2020">简体中文</a></li><li><a href="/hu/exchange-rate-history/JPY-USD/2020">Magyar</a></li><li><a href="/ja/exchange-rate-history/JPY-USD/2020">日本語</a></li>                </ul>
+                <script>
+                    head.ready(function(){
+                        $('.dropdown-button-lang').dropdown({
+                            inDuration: 300,
+                            outDuration: 225,
+                            constrain_width: true, // Does not change width of dropdown to that of the activator
+                            hover: false, // Activate on hover
+                            gutter: 0, // Spacing from edge
+                            belowOrigin: true // Displays dropdown below the button
+                        });
+                        $('.dropdown-button-menu').dropdown({
+                            inDuration: 300,
+                            outDuration: 225,
+                            constrain_width: false, // Does not change width of dropdown to that of the activator
+                            hover: false, // Activate on hover
+                            gutter: 0, // Spacing from edge
+                            belowOrigin: true // Displays dropdown below the button
+                        });
+                    });
+                </script>
+                <div id="search_wrap" class="hide-on-small-only  " style="padding: 5px 5px 5px 5px" >
+                    <form action="/ru/search">
+                        <div class="input-field" >
+                            <input class="" id="search"  name="q" type="search" placeholder="Например, RUB HKD, Замбия, история eur/usd 2011, курс гривна/рубль" required style="height: 34px; line-height: 35px">
+                            <label for="search" style="margin-top: -5px">
+                                <!--<i class="material-icons">&#xe8b6;</i>-->
+                                <i class="small mdi-action-search" ></i>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="logo hide-on-med-and-down" style=""><a id="logo-container"  href="/ru/" title="FreeCurrencyRates.com"  class="brand-logo" >
+                <img src="/images/icon_150.png" "></a>
+
+        </div>
+        <div class="hgroup">
+
+            <h1>Онлайн конвертер валют</h1>
+            <h2>История обменного курса валют Иена (JPY) и Доллар США (USD) за 2020 год. Источник: FCR</h2>
+        </div>
+
+    </div>
+    <aside style="position: absolute">
+        <div id="nav-mobile" class="side-nav fixed" >
+            <!--
+            -->
+            <div class="search_aside hide-on-med-and-up">
+                <form action="/ru/search">
+                    <div class="input-field" style="margin-top: 0;" >
+                        <label for="search_side">
+                            <i class="small mdi-action-search" ></i>
+                        </label>
+                        <input id="search_side"  name="q" type="search" required style="">
+                    </div>
+                </form>
+            </div>
+            <ul class="list_item lang_ru">
+                <li  ><a class="waves-effect waves-primary" href="/ru/" title="FreeCurrencyRates.com"><i class="small mdi-action-home"></i> Главная</a></li>
+                <li  ><a class="waves-effect waves-primary" href="/ru/myconverter" title="Настраиваемый онлайн конвертер валют"><i class="small mdi-editor-format-list-numbered"></i> Персональный конвертер</a></li>
+                <li ><a class="waves-effect waves-primary" href="/ru/get-widget" title="Конвертер валют для Вашего сайта или блога"><i class="small material-icons">&#xE86D;</i> Виджет</a></li>
+
+                <li class="bold"><a class="waves-effect waves-primary" href="/ru/goto-iphone" title="Конвертер для iPhone"><i class="small mdi-hardware-phone-iphone"></i> Конвертер для iPhone</a></li>
+                <li class="bold"><a class="waves-effect waves-primary" href="/ru/goto-android" title="Конвертер для Android"><i class="small mdi-action-android"></i> Конвертер для Android</a></li>
+
+                <li ><a class="waves-effect waves-primary" href="/articles/ru/" title="Статьи о валютах и техническая информация и виджетах"><i class="small material-icons">import_contacts</i> Статьи</a></li>
+
+            </ul>
+        </div>
+    </aside>
+</header>
+<script>
+    head.ready(function () {
+        $('.button-collapse').sideNav({
+                menuWidth: 240, // Default is 240
+                edge: 'left', // Choose the horizontal origin
+                closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            }
+        );
+        //
+        $('.button-collapse1').click(function () {
+            if ($('.side-nav').css('left') == '0px') {
+                $('.side-nav').animate({left: "-250px"}, 300);
+            } else $('.side-nav').animate({left: "0px"}, 300);
+
+        });
+
+        // Floating-Fixed table of contents
+        if ($('header').height()) {
+            $('#nav-mobile').pushpin({
+                top: $('header').height()
+            });
+        }
+        else {
+            $('#nav-mobile').pushpin({top: 0});
+        }
+    });
+</script>
+
+<main>
+    <div class="content_wrapper">
+        <noscript>
+        <div class="note">
+            <p>Для корректной работы этого сайта необходима поддержка Javascript.</p>
+            <a style="margin: auto" href="http://enable-javascript.com/ru/">Как включить JavaScript в вашем веб-браузере</a>
+        </div>
+</noscript>
+        <div class="rekmek">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 20170815-history-top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6640387362477511"
+     data-ad-slot="6240550234"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>        </div>
+
+        <div class="card-panel row">
+            <div class="currency-history-see-also">
+                <a class="action" href="/ru/exchange-rate-history/USD-JPY/2020">Поменять местами</a>&nbsp;&nbsp;&nbsp;
+                <a class="action" href="/ru/convert-JPY-USD">Текущий курс JPY/USD</a>&nbsp;&nbsp;&nbsp;
+                <a class="action" href="/ru/convert-USD-JPY">Текущий курс USD/JPY</a>
+                <br>
+                Источник: <b><span id="tag" value="fcr"> free currency rates</span></b> ( <a href="/ru/exchange-rate-history/JPY-USD/2015" class="link-after-link"
+                                        title="История курса JPY/USD за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016" class="link-after-link"
+                                        title="История курса JPY/USD за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017" class="link-after-link"
+                                        title="История курса JPY/USD за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018" class="link-after-link"
+                                        title="История курса JPY/USD за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019" class="link-after-link"
+                                        title="История курса JPY/USD за 2019 год (free currency rates)">2019</a>, <span class="link-after-link">2020</span> , <a href="/ru/exchange-rate-history/JPY-USD/2021" class="link-after-link"
+                                        title="История курса JPY/USD за 2021 год (free currency rates)">2021</a> )<br>
+<H3>Также доступны: </H3>Yahoo Finance (Yahoo!) - ( <a href="/ru/exchange-rate-history/JPY-USD/2013/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2013 год (free currency rates)">2013</a>, <a href="/ru/exchange-rate-history/JPY-USD/2014/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2014 год (free currency rates)">2014</a>, <a href="/ru/exchange-rate-history/JPY-USD/2015/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/yahoo" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Европейский центральный банк (ЕЦБ) - ( <a href="/ru/exchange-rate-history/JPY-USD/2014/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2014 год (free currency rates)">2014</a>, <a href="/ru/exchange-rate-history/JPY-USD/2015/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/eucb" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Центральный банк Российской Федерации (ЦБРФ) - ( <a href="/ru/exchange-rate-history/JPY-USD/1992/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1992 год (free currency rates)">1992</a>, <a href="/ru/exchange-rate-history/JPY-USD/1993/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1993 год (free currency rates)">1993</a>, <a href="/ru/exchange-rate-history/JPY-USD/1994/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1994 год (free currency rates)">1994</a>, <a href="/ru/exchange-rate-history/JPY-USD/1995/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1995 год (free currency rates)">1995</a>, <a href="/ru/exchange-rate-history/JPY-USD/1996/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1996 год (free currency rates)">1996</a>, <a href="/ru/exchange-rate-history/JPY-USD/1997/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1997 год (free currency rates)">1997</a>, <a href="/ru/exchange-rate-history/JPY-USD/1998/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1998 год (free currency rates)">1998</a>, <a href="/ru/exchange-rate-history/JPY-USD/1999/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 1999 год (free currency rates)">1999</a>, <a href="/ru/exchange-rate-history/JPY-USD/2000/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2000 год (free currency rates)">2000</a>, <a href="/ru/exchange-rate-history/JPY-USD/2001/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2001 год (free currency rates)">2001</a>, <a href="/ru/exchange-rate-history/JPY-USD/2002/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2002 год (free currency rates)">2002</a>, <a href="/ru/exchange-rate-history/JPY-USD/2003/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2003 год (free currency rates)">2003</a>, <a href="/ru/exchange-rate-history/JPY-USD/2004/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2004 год (free currency rates)">2004</a>, <a href="/ru/exchange-rate-history/JPY-USD/2005/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2005 год (free currency rates)">2005</a>, <a href="/ru/exchange-rate-history/JPY-USD/2006/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2006 год (free currency rates)">2006</a>, <a href="/ru/exchange-rate-history/JPY-USD/2007/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2007 год (free currency rates)">2007</a>, <a href="/ru/exchange-rate-history/JPY-USD/2008/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2008 год (free currency rates)">2008</a>, <a href="/ru/exchange-rate-history/JPY-USD/2009/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2009 год (free currency rates)">2009</a>, <a href="/ru/exchange-rate-history/JPY-USD/2010/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2010 год (free currency rates)">2010</a>, <a href="/ru/exchange-rate-history/JPY-USD/2011/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2011 год (free currency rates)">2011</a>, <a href="/ru/exchange-rate-history/JPY-USD/2012/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2012 год (free currency rates)">2012</a>, <a href="/ru/exchange-rate-history/JPY-USD/2013/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2013 год (free currency rates)">2013</a>, <a href="/ru/exchange-rate-history/JPY-USD/2014/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2014 год (free currency rates)">2014</a>, <a href="/ru/exchange-rate-history/JPY-USD/2015/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/cbr" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Банк Китая (BOC) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/boc" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Национальный банк Швейцарии (НБШ) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/snb" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Резервный банк Австралии (РБА) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/rba" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Национальный банк Австрии (НБА) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/oenb" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Центральный банк Украины (НБУ) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/nbu" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/nbu" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/nbu" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/nbu" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/nbu" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>)<br>
+Национальный банк Республики Беларусь (НБРБ) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/nbrb" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Национальный банк Республики Казахстан (НБК) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/nbk" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>)<br>
+Bitcoin charts (Bitcoin charts) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/bitcoincharts" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Blockchain (Blockchain) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/blockchain" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Центральный банк Мьянмы (НБМ) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/cbm" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+Центральный банк Азербайджана (ЦБАР) - ( <a href="/ru/exchange-rate-history/JPY-USD/2014/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2014 год (free currency rates)">2014</a>, <a href="/ru/exchange-rate-history/JPY-USD/2015/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/cbar" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>)<br>
+Банк Канады (БК) - ( <a href="/ru/exchange-rate-history/JPY-USD/2015/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2015 год (free currency rates)">2015</a>, <a href="/ru/exchange-rate-history/JPY-USD/2016/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2016 год (free currency rates)">2016</a>, <a href="/ru/exchange-rate-history/JPY-USD/2017/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2017 год (free currency rates)">2017</a>, <a href="/ru/exchange-rate-history/JPY-USD/2018/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2018 год (free currency rates)">2018</a>, <a href="/ru/exchange-rate-history/JPY-USD/2019/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2019 год (free currency rates)">2019</a>, <a href="/ru/exchange-rate-history/JPY-USD/2020/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2020 год (free currency rates)">2020</a>, <a href="/ru/exchange-rate-history/JPY-USD/2021/bc" class="link-after-link"
+                                title="История курса USD/JPY за 2021 год (free currency rates)">2021</a>)<br>
+
+                <div >
+                    <div id="legendContainer"></div>
+                    <div class='' style="width: 100%; float: left;">
+                        <div id="placeholder" style=" height:200px;"></div>
+                        <br/>
+                    </div>
+                </div>
+                <div class='clearfix'></div>
+            </div>
+
+            <div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Дек 2020 года (12.2020)</h2><div id='show_chart_12' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;31</div><div class='one-month-data-rate'>0.00970</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;30</div><div class='one-month-data-rate'>0.00966</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;29</div><div class='one-month-data-rate'>0.00965</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;28</div><div class='one-month-data-rate'>0.00965</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;27</div><div class='one-month-data-rate'>0.00965</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;26</div><div class='one-month-data-rate'>0.00965</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;25</div><div class='one-month-data-rate'>0.00966</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;24</div><div class='one-month-data-rate'>0.00966</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;23</div><div class='one-month-data-rate'>0.00967</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;22</div><div class='one-month-data-rate'>0.00966</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;21</div><div class='one-month-data-rate'>0.00966</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;20</div><div class='one-month-data-rate'>0.00967</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;19</div><div class='one-month-data-rate'>0.00967</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;18</div><div class='one-month-data-rate'>0.00968</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;17</div><div class='one-month-data-rate'>0.00968</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;16</div><div class='one-month-data-rate'>0.00964</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;15</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;14</div><div class='one-month-data-rate'>0.00962</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;13</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;12</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;11</div><div class='one-month-data-rate'>0.00959</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;10</div><div class='one-month-data-rate'>0.00959</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;09</div><div class='one-month-data-rate'>0.00960</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;08</div><div class='one-month-data-rate'>0.00960</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;07</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;06</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;05</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;04</div><div class='one-month-data-rate'>0.00960</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;03</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;02</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Дек&nbsp;01</div><div class='one-month-data-rate'>0.00960</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix">                        <div class="inner-ad-banner">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 20170815-history-middle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6640387362477511"
+     data-ad-slot="6124822558"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>                        </div>
+                    </div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Ноя 2020 года (11.2020)</h2><div id='show_chart_11' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;30</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;29</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;28</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;27</div><div class='one-month-data-rate'>0.00960</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;26</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;25</div><div class='one-month-data-rate'>0.00959</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;24</div><div class='one-month-data-rate'>0.00962</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;23</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;22</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;21</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;20</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;19</div><div class='one-month-data-rate'>0.00962</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;18</div><div class='one-month-data-rate'>0.00961</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;17</div><div class='one-month-data-rate'>0.00957</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;16</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;15</div><div class='one-month-data-rate'>0.00954</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;14</div><div class='one-month-data-rate'>0.00954</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;13</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;12</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;11</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;10</div><div class='one-month-data-rate'>0.00955</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;09</div><div class='one-month-data-rate'>0.00963</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;08</div><div class='one-month-data-rate'>0.00967</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;07</div><div class='one-month-data-rate'>0.00967</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;06</div><div class='one-month-data-rate'>0.00964</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;05</div><div class='one-month-data-rate'>0.00957</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;04</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;03</div><div class='one-month-data-rate'>0.00955</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;02</div><div class='one-month-data-rate'>0.00956</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Ноя&nbsp;01</div><div class='one-month-data-rate'>0.00957</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Окт 2020 года (10.2020)</h2><div id='show_chart_10' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;31</div><div class='one-month-data-rate'>0.00957</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;30</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;29</div><div class='one-month-data-rate'>0.00959</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;28</div><div class='one-month-data-rate'>0.00957</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;27</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;26</div><div class='one-month-data-rate'>0.00954</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;25</div><div class='one-month-data-rate'>0.00955</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;24</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;23</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;22</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;21</div><div class='one-month-data-rate'>0.00951</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;20</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;19</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;18</div><div class='one-month-data-rate'>0.00950</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;17</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;16</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;15</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;14</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;13</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;12</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;11</div><div class='one-month-data-rate'>0.00945</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;10</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;09</div><div class='one-month-data-rate'>0.00944</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;08</div><div class='one-month-data-rate'>0.00944</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;07</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;06</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;05</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;04</div><div class='one-month-data-rate'>0.00950</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;03</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;02</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Окт&nbsp;01</div><div class='one-month-data-rate'>0.00947</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Сен 2020 года (09.2020)</h2><div id='show_chart_09' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;30</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;29</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;28</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;27</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;26</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;25</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;24</div><div class='one-month-data-rate'>0.00950</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;23</div><div class='one-month-data-rate'>0.00953</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;22</div><div class='one-month-data-rate'>0.00957</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;21</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;20</div><div class='one-month-data-rate'>0.00956</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;19</div><div class='one-month-data-rate'>0.00957</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;18</div><div class='one-month-data-rate'>0.00955</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;17</div><div class='one-month-data-rate'>0.00952</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;16</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;15</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;14</div><div class='one-month-data-rate'>0.00943</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;13</div><div class='one-month-data-rate'>0.00942</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;12</div><div class='one-month-data-rate'>0.00942</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;11</div><div class='one-month-data-rate'>0.00942</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;10</div><div class='one-month-data-rate'>0.00942</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;09</div><div class='one-month-data-rate'>0.00942</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;08</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;07</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;06</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;05</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;04</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;03</div><div class='one-month-data-rate'>0.00941</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;02</div><div class='one-month-data-rate'>0.00943</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Сен&nbsp;01</div><div class='one-month-data-rate'>0.00945</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Авг 2020 года (08.2020)</h2><div id='show_chart_08' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;31</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;30</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;29</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;28</div><div class='one-month-data-rate'>0.00943</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;27</div><div class='one-month-data-rate'>0.00942</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;26</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;25</div><div class='one-month-data-rate'>0.00943</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;24</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;23</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;22</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;21</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;20</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;19</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;18</div><div class='one-month-data-rate'>0.00944</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;17</div><div class='one-month-data-rate'>0.00939</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;16</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;15</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;14</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;13</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;12</div><div class='one-month-data-rate'>0.00939</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;11</div><div class='one-month-data-rate'>0.00942</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;10</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;09</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;08</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;07</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;06</div><div class='one-month-data-rate'>0.00947</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;05</div><div class='one-month-data-rate'>0.00945</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;04</div><div class='one-month-data-rate'>0.00943</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;03</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;02</div><div class='one-month-data-rate'>0.00952</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Авг&nbsp;01</div><div class='one-month-data-rate'>0.00952</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Июл 2020 года (07.2020)</h2><div id='show_chart_07' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;31</div><div class='one-month-data-rate'>0.00952</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;30</div><div class='one-month-data-rate'>0.00951</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;29</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;28</div><div class='one-month-data-rate'>0.00949</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;27</div><div class='one-month-data-rate'>0.00946</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;26</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;25</div><div class='one-month-data-rate'>0.00941</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;24</div><div class='one-month-data-rate'>0.00938</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;23</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;22</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;21</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;20</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;19</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;18</div><div class='one-month-data-rate'>0.00934</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;17</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;16</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;15</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;14</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;13</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;12</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;11</div><div class='one-month-data-rate'>0.00935</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;10</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;09</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;08</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;07</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;06</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;05</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;04</div><div class='one-month-data-rate'>0.00930</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;03</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;02</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июл&nbsp;01</div><div class='one-month-data-rate'>0.00929</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Июн 2020 года (06.2020)</h2><div id='show_chart_06' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;30</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;29</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;28</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;27</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;26</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;25</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;24</div><div class='one-month-data-rate'>0.00936</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;23</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;22</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;21</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;20</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;19</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;18</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;17</div><div class='one-month-data-rate'>0.00931</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;16</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;15</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;14</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;13</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;12</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;11</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;10</div><div class='one-month-data-rate'>0.00929</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;09</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;08</div><div class='one-month-data-rate'>0.00915</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;07</div><div class='one-month-data-rate'>0.00915</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;06</div><div class='one-month-data-rate'>0.00915</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;05</div><div class='one-month-data-rate'>0.00916</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;04</div><div class='one-month-data-rate'>0.00919</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;03</div><div class='one-month-data-rate'>0.00924</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;02</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Июн&nbsp;01</div><div class='one-month-data-rate'>0.00931</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Май 2020 года (05.2020)</h2><div id='show_chart_05' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;31</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;30</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;29</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;28</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;27</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;26</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;25</div><div class='one-month-data-rate'>0.00929</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;24</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;23</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;22</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;21</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;20</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;19</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;18</div><div class='one-month-data-rate'>0.00933</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;17</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;16</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;15</div><div class='one-month-data-rate'>0.00934</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;14</div><div class='one-month-data-rate'>0.00935</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;13</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;12</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;11</div><div class='one-month-data-rate'>0.00936</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;10</div><div class='one-month-data-rate'>0.00940</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;09</div><div class='one-month-data-rate'>0.00940</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;08</div><div class='one-month-data-rate'>0.00940</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;07</div><div class='one-month-data-rate'>0.00940</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;06</div><div class='one-month-data-rate'>0.00939</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;05</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;04</div><div class='one-month-data-rate'>0.00936</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;03</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;02</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Май&nbsp;01</div><div class='one-month-data-rate'>0.00937</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Апр 2020 года (04.2020)</h2><div id='show_chart_04' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;30</div><div class='one-month-data-rate'>0.00938</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;29</div><div class='one-month-data-rate'>0.00936</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;28</div><div class='one-month-data-rate'>0.00933</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;27</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;26</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;25</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;24</div><div class='one-month-data-rate'>0.00929</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;23</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;22</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;21</div><div class='one-month-data-rate'>0.00929</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;20</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;19</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;18</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;17</div><div class='one-month-data-rate'>0.00928</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;16</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;15</div><div class='one-month-data-rate'>0.00931</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;14</div><div class='one-month-data-rate'>0.00928</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;13</div><div class='one-month-data-rate'>0.00925</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;12</div><div class='one-month-data-rate'>0.00922</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;11</div><div class='one-month-data-rate'>0.00921</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;10</div><div class='one-month-data-rate'>0.00920</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;09</div><div class='one-month-data-rate'>0.00919</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;08</div><div class='one-month-data-rate'>0.00918</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;07</div><div class='one-month-data-rate'>0.00917</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;06</div><div class='one-month-data-rate'>0.00919</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;05</div><div class='one-month-data-rate'>0.00923</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;04</div><div class='one-month-data-rate'>0.00923</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;03</div><div class='one-month-data-rate'>0.00927</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;02</div><div class='one-month-data-rate'>0.00930</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Апр&nbsp;01</div><div class='one-month-data-rate'>0.00926</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Мар 2020 года (03.2020)</h2><div id='show_chart_03' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;31</div><div class='one-month-data-rate'>0.00925</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;30</div><div class='one-month-data-rate'>0.00924</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;29</div><div class='one-month-data-rate'>0.00921</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;28</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;27</div><div class='one-month-data-rate'>0.00914</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;26</div><div class='one-month-data-rate'>0.00903</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;25</div><div class='one-month-data-rate'>0.00901</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;24</div><div class='one-month-data-rate'>0.00905</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;23</div><div class='one-month-data-rate'>0.00906</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;22</div><div class='one-month-data-rate'>0.00906</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;21</div><div class='one-month-data-rate'>0.00907</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;20</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;19</div><div class='one-month-data-rate'>0.00922</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;18</div><div class='one-month-data-rate'>0.00933</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;17</div><div class='one-month-data-rate'>0.00939</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;16</div><div class='one-month-data-rate'>0.00939</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;15</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;14</div><div class='one-month-data-rate'>0.00937</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;13</div><div class='one-month-data-rate'>0.00950</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;12</div><div class='one-month-data-rate'>0.00958</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;11</div><div class='one-month-data-rate'>0.00956</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;10</div><div class='one-month-data-rate'>0.00964</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;09</div><div class='one-month-data-rate'>0.00960</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;08</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;07</div><div class='one-month-data-rate'>0.00948</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;06</div><div class='one-month-data-rate'>0.00941</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;05</div><div class='one-month-data-rate'>0.00932</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;04</div><div class='one-month-data-rate'>0.00929</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;03</div><div class='one-month-data-rate'>0.00927</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;02</div><div class='one-month-data-rate'>0.00924</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Мар&nbsp;01</div><div class='one-month-data-rate'>0.00920</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Фев 2020 года (02.2020)</h2><div id='show_chart_02' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;29</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;28</div><div class='one-month-data-rate'>0.00914</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;27</div><div class='one-month-data-rate'>0.00907</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;26</div><div class='one-month-data-rate'>0.00905</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;25</div><div class='one-month-data-rate'>0.00901</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;24</div><div class='one-month-data-rate'>0.00897</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;23</div><div class='one-month-data-rate'>0.00895</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;22</div><div class='one-month-data-rate'>0.00895</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;21</div><div class='one-month-data-rate'>0.00894</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;20</div><div class='one-month-data-rate'>0.00901</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;19</div><div class='one-month-data-rate'>0.00909</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;18</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;17</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;16</div><div class='one-month-data-rate'>0.00911</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;15</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;14</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;13</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;12</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;11</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;10</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;09</div><div class='one-month-data-rate'>0.00911</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;08</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;07</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;06</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;05</div><div class='one-month-data-rate'>0.00915</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;04</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;03</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;02</div><div class='one-month-data-rate'>0.00919</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Фев&nbsp;01</div><div class='one-month-data-rate'>0.00919</div></div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="one-month-rates" style="overflow: inherit;position:relative;">
+<h2 class='month-header'>История обменного курса JPY/USD (Иена/Доллар США) за Янв 2020 года (01.2020)</h2><div id='show_chart_01' title='Показать график' class='show_chart'><img src='/images/chart.png'></div> 
+<div class='clearfix'></div><div class="one-month-data"><div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;31</div><div class='one-month-data-rate'>0.00918</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;30</div><div class='one-month-data-rate'>0.00918</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;29</div><div class='one-month-data-rate'>0.00917</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;28</div><div class='one-month-data-rate'>0.00918</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;27</div><div class='one-month-data-rate'>0.00915</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;26</div><div class='one-month-data-rate'>0.00913</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;25</div><div class='one-month-data-rate'>0.00913</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;24</div><div class='one-month-data-rate'>0.00913</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;23</div><div class='one-month-data-rate'>0.00911</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;22</div><div class='one-month-data-rate'>0.00909</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;21</div><div class='one-month-data-rate'>0.00908</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;20</div><div class='one-month-data-rate'>0.00908</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;19</div><div class='one-month-data-rate'>0.00908</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;18</div><div class='one-month-data-rate'>0.00908</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;17</div><div class='one-month-data-rate'>0.00908</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;16</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;15</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;14</div><div class='one-month-data-rate'>0.00910</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;13</div><div class='one-month-data-rate'>0.00912</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;12</div><div class='one-month-data-rate'>0.00913</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;11</div><div class='one-month-data-rate'>0.00913</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;10</div><div class='one-month-data-rate'>0.00914</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;09</div><div class='one-month-data-rate'>0.00918</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;08</div><div class='one-month-data-rate'>0.00923</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;07</div><div class='one-month-data-rate'>0.00924</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;06</div><div class='one-month-data-rate'>0.00925</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;05</div><div class='one-month-data-rate'>0.00925</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;04</div><div class='one-month-data-rate'>0.00924</div></div>
+</div>
+<div class="column"><div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;03</div><div class='one-month-data-rate'>0.00922</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;02</div><div class='one-month-data-rate'>0.00920</div></div>
+<div class='one-month-data-cell'><div class='one-month-data-date'>Янв&nbsp;01</div><div class='one-month-data-rate'>0.00920</div></div>
+</div>
+</div>
+</div>
+            <div class='clearfix'></div>
+            <br/>
+            <div>*Графики и данные основаны на последней цене дня или на фиксированной дневной цене (что доступно).</div>
+        </div>
+
+        <div class="rekmek">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 20170815-history-bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6640387362477511"
+     data-ad-slot="4697380189"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>        </div>
+    </div>
+</main>
+
+<script language="javascript" type="text/javascript">
+    head.ready(function () {
+        var cm = fcr.i18GetPage('date');
+        var pt = fcr.i18GetPage('plot');
+        var from_iso = 'JPY',
+            to_iso = 'USD',
+            tag = 'fcr',
+            year = 2020;
+
+        var chOpts = {from_iso:from_iso, to_iso:to_iso, tag:tag};
+        var chart = new Chart(chOpts);
+        chart.aj = chart.request1(fcr.mkLinkAction('pdata',{s:tag,
+            b:from_iso,
+            t:to_iso,
+            y:year,
+            ln:fcr.ctx.lang
+        }));
+
+        chart.legendContainer = $("#legendContainer");
+        $("#placeholder").bind("plothover", function (event, pos, item) {
+            chart.plothvr(event, pos, item);
+        }).hover(function () {
+        },function () {
+            chart.plot.draw();
+        });
+        if(chart.aj.length )
+            chart.onDataReceived($("#placeholder"),chart.aj[chart.aj.length-1][0],chart.aj[0][0]);
+        else
+            chart.onDataReceived($("#placeholder"),'NaN','NaN');
+        $('.show_chart').each(function(index){
+            var ss = $(this).attr('id');
+            var idx = ss.split('show_chart_');
+
+            $('#show_chart_'+idx[1]).click(function(){
+                $this=$(this);
+                if($('#chart'+idx[1]).length){
+                    $this.next().toggle('flow');
+                } else   {
+                    var chart_month = [];
+                    var fl_idx = parseFloat(idx[1]);
+                    chart_month[fl_idx] = new Chart(chOpts);
+                    chart_month[fl_idx].aj = chart.aj;
+                    var st = '<div id="chart'+idx[1]+'" style="width: 100%; clear:both"><div id="legendContainer'+idx[1]+
+                        '" style="float: right; margin-top: 5px;"></div><div class="" style="width: 100%; float: left;"><div id="placeholder'+idx[1]+'" ' +
+                        'style="height:200px;"></div></div></div><div class="clearfix"></div>';
+                    $this.after(st);
+                    chart_month[fl_idx].legendContainer = $("#legendContainer"+idx[1]);
+                    var dt_from    = (new Date(year,fl_idx-1));                                 //start
+                    var dt_to      = (new Date(year,fl_idx));   //end
+                    if(chart_month[fl_idx].aj.length )
+                        chart_month[fl_idx].onDataReceived($("#placeholder"+idx[1]),dt_from,dt_to);     //from-to datetime
+                    else
+                        chart_month[fl_idx].onDataReceived($("#placeholder"+idx[1]),'NaN','NaN');
+                    $("#placeholder"+idx[1]).bind("plothover", function (event, pos, item) {
+                        //alert(1);
+                        chart_month[fl_idx].plothvr(event, pos, item);
+                    });
+
+                    $("#placeholder"+idx[1]).hover(function () {
+                    },function () {
+                        chart_month[fl_idx].plot.draw();
+                    });
+
+                    //$('#chart'+idx[1]).toggle('flow');
+                    $('#chart'+idx[1]).hide();
+                    $('#chart'+idx[1]).show('flow');
+
+                }
+            });
+        });
+
+    });
+
+
+
+</script>
+
+
+<footer>
+    <div class="footer container-fluid">
+        <a href="/ru/goto-iphone"
+           title="Конвертер для iPhone">Конвертер для iPhone</a>|
+        <a href="/ru/goto-android"
+           title="Конвертер для Android">Конвертер для Android</a>
+        <br>
+        ©2015 MobileSoftJungle Ltd. | support:
+        <a href="mailto:support@mobilesoftjungle.com?subject=FreeCurrencyRates.com&body=Hello,">support@mobilesoftjungle.com</a>
+    </div>
+</footer>
+
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
